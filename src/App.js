@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import Feed from './components/Feed';
+import Header from './components/Header';
+import SecondHeader from './components/SecondHeader';
+import { FeedRefreshProvider } from './contexts/FeedRefreshContext';
+import { RegionContextProvider } from './contexts/RegionContext';
+import { SearchTermProvider } from './contexts/SearchTermContext';
+import FeedPage from './pages/FeedPage';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import DetailsPage from './pages/DetailsPage';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SearchTermProvider>
+      <FeedRefreshProvider>
+        <RegionContextProvider>
+          <div className="App">
+            <Router>
+              <Switch>
+                <Route exact path="/" component={FeedPage} />
+                <Route exact path="/details" component={DetailsPage} />
+              </Switch>
+            </Router>
+          </div>
+        </RegionContextProvider>
+      </FeedRefreshProvider>
+    </SearchTermProvider>
   );
 }
 
