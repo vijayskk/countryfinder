@@ -1,7 +1,4 @@
 import './App.css';
-import Feed from './components/Feed';
-import Header from './components/Header';
-import SecondHeader from './components/SecondHeader';
 import { FeedRefreshProvider } from './contexts/FeedRefreshContext';
 import { RegionContextProvider } from './contexts/RegionContext';
 import { SearchTermProvider } from './contexts/SearchTermContext';
@@ -10,7 +7,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import DetailsPage from './pages/DetailsPage';
 

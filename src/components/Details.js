@@ -1,12 +1,10 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom';
-import { SearchTerm } from '../contexts/SearchTermContext';
 
 function Details() {
     const [result, setresult] = useState([])
     const [loading, setloading] = useState(false)
-    const [, setsearchterm] = useContext(SearchTerm)
     const history = useHistory()
     useEffect(() => {
         setloading(true)

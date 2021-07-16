@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom'
 import { FeedRefresh } from '../contexts/FeedRefreshContext'
 import { RegionContext } from '../contexts/RegionContext'
 import { SearchTerm } from '../contexts/SearchTermContext'
-var Spinner = require('react-spinkit');
 
 function Feed() {
     const [result, setresult] = useState([])
